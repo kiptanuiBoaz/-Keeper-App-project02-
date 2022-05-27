@@ -4,21 +4,7 @@ import Footer from "./Footer";
 import Note from "./Note";
 import notes from "../notes";
 
- function reNotes (notes){
-  return(
-    <div>
-     
-
-      <Note
-        key={notes.key}
-        header={notes.title}
-        note={notes.content}
-      />
-
-    
-    </div>
-  )
-};
+ 
 
 
 
@@ -27,7 +13,22 @@ function App(){
   return (
     <div>
       <Header/>
-      {notes.map(reNotes)}
+      {notes.map((notes)=>
+            
+        <div>
+
+
+          <Note
+            key={notes.key}
+            header={notes.title}
+            note={notes.content.substring(0,17)+"..."}
+          />
+
+
+        </div>
+            
+          
+      )}
       <Footer/>
     </div>
    
